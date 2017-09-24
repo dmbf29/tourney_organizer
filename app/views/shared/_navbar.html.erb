@@ -1,0 +1,17 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <a href="/" class="navbar-wagon-brand">
+    <%= image_tag "brand.png" %>
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right">
+
+    <% if user_signed_in? %>
+    <!-- Profile picture with dropdown list -->
+      <%= link_to "New", new_tournament_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% end %>
+  </div>
+</div>

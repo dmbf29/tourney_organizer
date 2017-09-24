@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <% @tournaments.each do |tournament| %>
+      <%= link_to tournament_path(tournament) do %>
+        <p><%= tournament.name %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

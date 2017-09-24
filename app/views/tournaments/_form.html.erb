@@ -1,0 +1,8 @@
+<%= simple_form_for @tournament do |f| %>
+  <div class="tournament-wrapper">
+    <%= f.input :name, label: "Name" %>
+    <%= f.input :date, input_html: { "data-provide" => "date-picker" } %>
+    <%= f.input :entries_number, collection: Tournament.options, label: "Number of Players" %>
+    <%= f.submit button, class: "btn btn-primary" %>
+  </div>
+<% end %>
