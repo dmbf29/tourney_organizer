@@ -21,9 +21,17 @@ class Tournament < ApplicationRecord
     end
   end
 
-  # def create_group_games
-  #   groups.each do |group|
-
-  #   end
-  # end
+  def create_group_games
+    groups.each do |group|
+      entries = []
+      group.entries.each do |entry|
+        entries << entry
+      end
+      games = RoundRobinTournament.schedule(entries.uniq)
+      games.each_with_index do |round, index|
+        week_matchups = round.map { |matchup| Game.create(tournament: self, group: group, entry_home: matchup.first, entry_away: matchup.last) }
+        puts "Round #{index + 1}: #{week_matchups}"
+      end
+    end
+  end
 end

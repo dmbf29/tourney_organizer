@@ -1,0 +1,76 @@
+    <div class="col-xs-6">
+      <div class="group-header">
+        <h4>Group <%= group.name %></h4>
+      </div>
+      <div class="tournament-wrapper">
+        <% group.games.each do |game| %>
+          <div class="game-line">
+            <div class="game-home-team">
+              <p><%= game.entry_home.name %></p>
+            </div>
+            <% if game.entry_home_score.nil? %>
+              <div class="result-button"><button class="btn">Result</button></div>
+            <% else %>
+              <div class="game-home-score">
+                <p><%= game.entry_home_score %></p>
+              </div>
+              <div class="game-away-score">
+                <p><%= game.entry_away_score %></p>
+              </div>
+            <% end %>
+            <div class="game-away-team">
+              <p><%= game.entry_away.name %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="standings-header">
+        <h4>Standings</h4>
+      </div>
+      <div class="tournament-wrapper">
+        <div class="standings-line">
+          <div class="standings-team">
+            <p>Team</p>
+          </div>
+          <div class="standings-wins">
+            <p>W</p>
+          </div>
+          <div class="standings-draws">
+            <p>D</p>
+          </div>
+          <div class="standings-losses">
+            <p>L</p>
+          </div>
+          <div class="standings-difference">
+            <p>GD</p>
+          </div>
+          <div class="standings-points">
+            <p>Pts</p>
+          </div>
+        </div>
+        <% group.entries.each do |entry| %>
+          <div class="standings-line">
+            <div class="standings-team">
+              <p><%= entry.name %></p>
+            </div>
+            <div class="standings-wins">
+              <p><%= entry.wins.length %></p>
+            </div>
+            <div class="standings-draws">
+              <p><%= entry.draws %></p>
+            </div>
+            <div class="standings-losses">
+              <p><%= entry.losses.length %></p>
+            </div>
+            <div class="standings-difference">
+              <p><%= entry.difference %></p>
+            </div>
+            <div class="standings-points">
+              <p><%= entry.points %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>

@@ -1,0 +1,66 @@
+.group-header {
+  background-color: $purple;
+  color: $lime;
+  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
+  h4 {
+    margin: 0;
+  }
+}
+.standings-header {
+  background-color: $orange;
+  color: $purple;
+  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
+  h4 {
+    margin: 0;
+  }
+}
+.game-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+.game-home-team {
+  font-size: 14px;
+  flex: 0 0 35%
+}
+.game-away-team {
+  font-size: 14px;
+  flex: 0 0 35%
+}
+
+.standings-line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.standings-team {
+  flex: 0 0 50%;
+  text-align: left;
+}
+.standings-wins {
+  flex: 0 0 10%;
+}
+.standings-draws {
+  flex: 0 0 10%;
+}
+.standings-losses {
+  flex: 0 0 10%;
+}
+.standings-difference {
+  flex: 0 0 10%;
+}
+.standings-points {
+  flex: 0 0 10%;
+}
+.btn {
+  font-size: 14px;
+}

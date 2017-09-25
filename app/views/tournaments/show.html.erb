@@ -1,7 +1,12 @@
 <div class="container">
+  <h1 style="margin:">Tournament Name</h1>
   <div class="row">
-    <div class="col-xs-12">
-
-    </div>
+    <%= render partial: "group_standings", locals: { group: @group_a } %>
+  </div>
+  <div class="row">
+    <%= render partial: "group_standings", locals: { group: @group_b } %>
+  </div>
+  <div class="row">
+    <%= render partial: "group_standings", locals: { group: @group_c } %>
   </div>
 </div>
