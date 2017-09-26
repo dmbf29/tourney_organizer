@@ -9,7 +9,7 @@
               <p><%= game.entry_home.name %></p>
             </div>
             <% if game.entry_home_score.nil? %>
-              <div class="result-button"><button class="btn">Result</button></div>
+              <div class="result-button"><p class="btn xi-start-button" data-toggle="modal" data-target="#modal-<%= game.id %>"><i class="fa fa-futbol-o" aria-hidden="true"></i></p></div>
             <% else %>
               <div class="game-home-score">
                 <p><%= game.entry_home_score %></p>
@@ -22,6 +22,23 @@
               <p><%= game.entry_away.name %></p>
             </div>
           </div>
+          <!-- Result Modal  -->
+          <div class="modal fade bs-example-modal-sm" id="modal-<%= game.id %>" tabindex="-1" role="dialog" aria-labelledby="mySmallBenchModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="tournament-header">
+                    <h4>Record Result</h4>
+                  </div>
+                  <%= simple_form_for [@tournament, game] do |f| %>
+
+                    <%= f.submit "Submit", class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Result Modal End -->
         <% end %>
       </div>
     </div>
@@ -30,7 +47,7 @@
         <h4>Standings</h4>
       </div>
       <div class="tournament-wrapper">
-        <div class="standings-line">
+        <div class="standings-line" style="font-weight:bolder">
           <div class="standings-team">
             <p>Team</p>
           </div>

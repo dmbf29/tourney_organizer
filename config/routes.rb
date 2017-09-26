@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :tournaments, only: [:index, :new, :create, :edit, :update, :show] do
     resources :groups, only: [:index]
     resources :entries, only: [:create]
+    resources :games, only: [:update]
   end
 end
