@@ -31,7 +31,20 @@
                     <h4>Record Result</h4>
                   </div>
                   <%= simple_form_for [@tournament, game] do |f| %>
-
+                    <div class="game-line">
+                      <div class="game-home-team">
+                        <p><%= game.entry_home.name %></p>
+                      </div>
+                      <div class="game-home-score">
+                        <p><%= f.input :entry_home_score, label: "Home" %></p>
+                      </div>
+                      <div class="game-away-score">
+                        <p><%= f.input :entry_away_score, label: "Away" %></p>
+                      </div>
+                      <div class="game-away-team">
+                        <p><%= game.entry_away.name %></p>
+                      </div>
+                    </div>
                     <%= f.submit "Submit", class: "btn btn-primary" %>
                   <% end %>
                 </div>
