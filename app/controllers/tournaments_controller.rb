@@ -35,6 +35,9 @@ class TournamentsController < ApplicationController
     @group_a = Group.find_by(name: "A", tournament: @tournament)
     @group_b = Group.find_by(name: "B", tournament: @tournament)
     @group_c = Group.find_by(name: "C", tournament: @tournament)
+    @standings_a = @group_a.entries.to_a.sort { |a, b| b.points <=> a.points }
+    @standings_b = @group_b.entries.to_a.sort { |a, b| b.points <=> a.points }
+    @standings_c = @group_c.entries.to_a.sort { |a, b| b.points <=> a.points }
   end
 
   private
