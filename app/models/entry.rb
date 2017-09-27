@@ -30,16 +30,20 @@ class Entry < ApplicationRecord
   def difference
     home_games = Game.where(entry_home: self)
     away_games = Game.where(entry_away: self)
-    if home_games.map(&:entry_home_score).first.nil? || away_goals = away_games.map(&:entry_away_score).first.nil?
-      "0"
+    goals = []
+    conceded = []
+    home_games.each do |game|
+      goals << game.entry_home_score unless game.entry_home_score.nil?
+      conceded << game.entry_away_score unless game.entry_away_score.nil?
+    end
+    away_games.each do |game|
+      goals << game.entry_away_score unless game.entry_away_score.nil?
+      conceded << game.entry_home_score unless game.entry_home_score.nil?
+    end
+    if goals.empty? || conceded.empty?
+      0
     else
-      home_goals = home_games.map(&:entry_home_score).inject(:+)
-      away_goals = away_games.map(&:entry_away_score).inject(:+)
-      home_conceded = home_games.map(&:entry_away_score).inject(:+)
-      away_conceded = away_games.map(&:entry_home_score).inject(:+)
-      goals = home_goals + away_goals
-      conceded = home_conceded + away_conceded
-      goals - conceded
+      goals.inject(:+) - conceded.inject(:+)
     end
   end
 end
