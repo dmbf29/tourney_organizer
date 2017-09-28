@@ -150,6 +150,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-ujs (0.1.0)
+      railties (>= 3.1)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -232,6 +234,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.0.rc1)
+  rails-ujs
   round_robin_tournament
   sass-rails!
   selenium-webdriver
@@ -244,4 +247,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.5
+   1.16.0.pre.2
