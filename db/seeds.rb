@@ -320,7 +320,7 @@ rating: 4
 Team.where(
 name: "Real Betis",
 badge: "real_betis.png",
-rating: 4.
+rating: 4
 ).first_or_create
 
 Team.where(
