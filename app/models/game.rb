@@ -7,6 +7,9 @@ class Game < ApplicationRecord
   belongs_to :winner, class_name: "Entry", foreign_key: "winner_id", optional: true
   belongs_to :loser, class_name: "Entry", foreign_key: "loser_id", optional: true
 
+  enum round: [:group_stage, :quarterfinals, :semifinals, :final]
+  enum knockout_name: [:quarter_one, :quarter_two, :quarter_three, :quarter_four, :semi_one, :semi_two, :final_one]
+
   def decide_outcome
     if self.entry_home_score > self.entry_away_score
       self.winner = entry_home
@@ -18,5 +21,42 @@ class Game < ApplicationRecord
       self.draw = true
     end
     save
+  end
+
+  def check_knockout_games
+    if knockout_name
+      games = Game.where(tournament: tournament, round: round)
+      return if games.where(winner: nil).any?
+
+      if round == "quarterfinals"
+        create_semis(self.tournament)
+      elsif round == "semifinals"
+        create_final(self.tournament)
+      end
+    end
+  end
+
+  def create_semis(tournament)
+    Game.create(tournament: tournament,
+                entry_home: Game.find_by(tournament: tournament, knockout_name: 1).winner,
+                entry_away: Game.find_by(tournament: tournament, knockout_name: 2).winner,
+                round: 2,
+                knockout_name: 4
+                )
+    Game.create(tournament: tournament,
+                entry_home: Game.find_by(tournament: tournament, knockout_name: 1).winner,
+                entry_away: Game.find_by(tournament: tournament, knockout_name: 2).winner,
+                round: 2,
+                knockout_name: 5
+                )
+  end
+
+  def create_final(tournament)
+    Game.create(tournament: tournament,
+                entry_home: Game.find_by(tournament: tournament, knockout_name: 4).winner,
+                entry_away: Game.find_by(tournament: tournament, knockout_name: 5).winner,
+                round: 2,
+                knockout_name: 6
+                )
   end
 end

@@ -1,7 +1,45 @@
 puts "Making players"
-12.times do
-  Player.create(name: Faker::Name.unique.name)
-end
+# 12.times do
+#   Player.create(name: Faker::Name.unique.name)
+# end
+
+Player.create(
+  name: "Dan"
+)
+Player.create(
+  name: "Rory"
+)
+Player.create(
+  name: "Daragh"
+)
+Player.create(
+  name: "Shaun"
+)
+Player.create(
+  name: "Doug"
+)
+Player.create(
+  name: "Scott"
+)
+Player.create(
+  name: "Mark"
+)
+Player.create(
+  name: "Craig"
+)
+Player.create(
+  name: "Alan"
+)
+Player.create(
+  name: "Andre"
+)
+Player.create(
+  name: "Lee"
+)
+Player.create(
+  name: "Chris"
+)
+
 puts "Players made"
 
 puts "Making screens"
@@ -78,31 +116,31 @@ rating: 5
 Team.where(
 name: "Spurs",
 badge: "spurs.png",
-rating: 5
+rating: 4.5
 ).first_or_create
 
 Team.where(
 name: "Borussia Dortmund",
 badge: "borussia_dortmund.png",
-rating: 5
+rating: 4.5
 ).first_or_create
 
 Team.where(
 name: "Liverpool",
 badge: "liverpool.png",
-rating: 5
+rating: 4.5
 ).first_or_create
 
 Team.where(
 name: "Napoli",
 badge: "napoli.png",
-rating: 5
+rating: 4.5
 ).first_or_create
 
 Team.where(
 name: "Roma",
 badge: "roma.png",
-rating: 5
+rating: 4.5
 ).first_or_create
 
 Team.where(
@@ -192,55 +230,55 @@ rating: 4.5
 Team.where(
 name: "Marseille",
 badge: "marseille.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Wolfsburg",
 badge: "wolfsburg.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Bayer Leverkusen",
 badge: "bayer_leverkusen.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Valencia",
 badge: "valencia.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Zenit",
 badge: "zenit.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Fenerbahce",
 badge: "fenerbahce.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Nice",
 badge: "nice.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Espanyol",
 badge: "espanyol.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Leicester City",
 badge: "leicester_city.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
@@ -252,67 +290,67 @@ rating: 4.5
 Team.where(
 name: "Schalke 04",
 badge: "schalke04.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Southampton",
 badge: "southampton.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Celta Vigo",
 badge: "southampton.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "RB Leipzig",
 badge: "rb_leipzig.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Galatasaray",
 badge: "galatasaray.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Real Betis",
 badge: "real_betis.png",
-rating: 4.5
+rating: 4.
 ).first_or_create
 
 Team.where(
 name: "Shaktar Donestsk",
 badge: "shaktar_donestk.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Torino",
 badge: "torino.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Fiorentina",
 badge: "fiorentina.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Lyon",
 badge: "lyon.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(
 name: "Hoffenheim",
 badge: "hoffenheim.png",
-rating: 4.5
+rating: 4
 ).first_or_create
 
 Team.where(

@@ -7,3 +7,55 @@
 .knockout-stage {
   flex: 0 0 20%;
 }
+
+.knockout-line {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.knockout-score {
+  color: $orange;
+}
+.knockout-header {
+  flex: 1 0 auto;
+  background-color: $purple;
+  color: $lime;
+  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
+  h3 {
+    margin: 0;
+  }
+  h4 {
+    margin: 0;
+  }
+  h5 {
+    margin: 0;
+  }
+}
+.final-header {
+  background-color: $purple;
+  color: $lime;
+  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
+  h3 {
+    margin: 0;
+  }
+  h4 {
+    margin: 0;
+  }
+  h5 {
+    margin: 0;
+  }
+  flex: 1 0 auto;
+  background-color: $orange;
+  color: $purple;
+}

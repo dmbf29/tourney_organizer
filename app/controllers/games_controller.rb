@@ -4,6 +4,7 @@ class GamesController < ApplicationController
     game = Game.find(params[:id])
     game.update(set_game_params)
     game.decide_outcome
+    game.check_knockout_games
     redirect_to tournament_path(tournament)
   end
 

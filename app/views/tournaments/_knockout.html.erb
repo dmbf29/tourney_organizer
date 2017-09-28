@@ -1,0 +1,69 @@
+<div class="col-xs-12">
+  <div class="tournament-wrapper">
+    <div class="knockout-box">
+      <div class="knockout-header" style="margin-right:5px;">
+        <h5>Quarterfinals</h5>
+      </div>
+      <div class="knockout-header" style="margin-right:5px;">
+        <h5>Semifinal</h5>
+      </div>
+      <div class="final-header">
+        <h5>Final</h5>
+      </div>
+      <div class="knockout-header" style="margin-left:5px;">
+        <h5>Semifinal</h5>
+      </div>
+      <div class="knockout-header" style="margin-left:5px;">
+        <h5>Quarterfinal</h5>
+      </div>
+    </div>
+    <div class="knockout-box">
+      <div class="knockout-stage">
+          <% if @quarter_one.nil?  %>
+            <h4>A1 / B2</h4><br />
+            <h4>B2 / C2</h4>
+          <% else %>
+            <%= render partial: "games/knockout_game_left", locals: {
+              game: @quarter_one } %>
+            <%= render partial: "games/knockout_game_left", locals: {
+              game: @quarter_two } %>
+          <% end %>
+      </div>
+      <div class="knockout-stage">
+          <% if @semi_one.nil?  %>
+            <h4>Q1 / Q2</h4>
+          <% else %>
+            <%= render partial: "games/knockout_game_left", locals: {
+            game: @semi_one } %>
+          <% end %>
+      </div>
+      <div class="knockout-stage">
+        <% if @final_one.nil?  %>
+          <h4>Final</h4>
+        <% else %>
+          <%= render partial: "games/knockout_game_left", locals: {
+          game: @final_one } %>
+        <% end %>
+      </div>
+      <div class="knockout-stage">
+        <% if @semi_two.nil?  %>
+          <h4>Q3 / Q4</h4>
+        <% else %>
+          <%= render partial: "games/knockout_game_right", locals: {
+          game: @semi_two } %>
+        <% end %>
+      </div>
+      <div class="knockout-stage">
+        <% if @quarter_three.nil?  %>
+          <h4>A1 / B2</h4><br />
+          <h4>B2 / C2</h4>
+        <% else %>
+          <%= render partial: "games/knockout_game_right", locals: {
+            game: @quarter_three } %>
+          <%= render partial: "games/knockout_game_right", locals: {
+          game: @quarter_four } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

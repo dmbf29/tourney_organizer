@@ -1,0 +1,54 @@
+<div class="knockout-game">
+  <div class="knockout-line">
+    <div class="knockout-team">
+      <p><%= game.entry_home.name %></p>
+    </div>
+    <% unless game.entry_home_score.nil? %>
+      <div class="knockout-score">
+        <p><%= game.entry_home_score %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class="knockout-line">
+    <div class="knockout-team">
+      <p><%= game.entry_away.name %></p>
+    </div>
+    <% if game.entry_home_score.nil? %>
+      <div class="result-button"><p class="btn xi-start-button" data-toggle="modal" data-target="#modal-<%= game.id %>"><i class="fa fa-futbol-o" aria-hidden="true"></i></p></div>
+    <% else %>
+      <div class="knockout-score">
+        <p><%= game.entry_away_score %></p>
+      </div>
+    <% end %>
+  </div>
+  <!-- Result Modal  -->
+  <div class="modal fade bs-example-modal-sm" id="modal-<%= game.id %>" tabindex="-1" role="dialog" aria-labelledby="mySmallBenchModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="tournament-header">
+            <h4>Record Result</h4>
+          </div>
+          <%= simple_form_for [@tournament, game] do |f| %>
+            <div class="game-line">
+              <div class="game-home-team">
+                <p><%= game.entry_home.name %></p>
+              </div>
+              <div class="game-home-score">
+                <p><%= f.input :entry_home_score, label: "Home" %></p>
+              </div>
+              <div class="game-away-score">
+                <p><%= f.input :entry_away_score, label: "Away" %></p>
+              </div>
+              <div class="game-away-team">
+                <p><%= game.entry_away.name %></p>
+              </div>
+            </div>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Result Modal End -->
+</div>

@@ -1,5 +1,31 @@
 <div class="container">
-  <h1 style="margin:"><%= @tournament.name %></h1>
+  <div class="tournament-banner">
+    <div class="banner-name">
+      <h1 style="margin:"><%= @tournament.name %></h1>
+    </div>
+    <% if @quarter_one.nil? %>
+      <div class="banner-button">
+        <%= link_to tournament_start_knockout_round_path(@tournament, id: @tournament.id), method: :post do  %>
+          <h4 class="knockout-button">Knockout Rnd</h4>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="banner-button"></div>
+    <% end %>
+  </div>
+  <% unless @quarter_one.nil? %>
+    <div class="row">
+      <%= render partial: "knockout", locals: {
+        quarter_one: @quarter_one,
+        quarter_two: @quarter_two,
+        quarter_three: @quarter_three,
+        quarter_four: @quarter_four,
+        semi_one: @semi_one,
+        semi_two: @semi_two,
+        final_one: @final_one
+      } %>
+    </div>
+  <% end %>
   <div class="row">
     <%= render partial: "group_standings", locals: { group: @group_a, standings: @standings_a } %>
   </div>
@@ -8,8 +34,5 @@
   </div>
   <div class="row">
     <%= render partial: "group_standings", locals: { group: @group_c, standings: @standings_c } %>
-  </div>
-  <div class="row">
-    <%= render partial: "tournament", locals: { group: @group_c } %>
   </div>
 </div>
