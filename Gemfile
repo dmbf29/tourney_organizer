@@ -22,7 +22,6 @@ gem "autoprefixer-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'faker'
 gem 'round_robin_tournament'
-gem 'jquery-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
