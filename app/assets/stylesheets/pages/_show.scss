@@ -72,6 +72,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p {
+    margin: 0;
+  }
 }
 .standings-team {
   flex: 0 0 50%;
@@ -94,4 +99,10 @@
 }
 .btn {
   font-size: 14px;
+}
+.second-line {
+  border-bottom: 1px solid $orange;
+}
+.third-line {
+  border-bottom: 1px dashed $bright-red;
 }

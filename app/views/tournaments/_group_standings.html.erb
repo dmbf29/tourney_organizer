@@ -17,6 +17,7 @@
               <div class="game-home-score">
                 <p><%= game.entry_home_score %></p>
               </div>
+              <div><p>:</p></div>
               <div class="game-away-score">
                 <p><%= game.entry_away_score %></p>
               </div>
@@ -87,7 +88,7 @@
           </div>
         </div>
         <% standings.entries.each do |entry| %>
-          <div class="standings-line">
+          <div class="standings-line <%= 'second-line' if entry == standings[1] %> <%= 'third-line' if entry == standings[2] %>">
             <div class="standings-team">
               <p><%= entry.name %></p>
             </div>
