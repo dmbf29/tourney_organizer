@@ -11,7 +11,7 @@
 .knockout-line {
   font-size: 14px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin: 10px;
   p {
@@ -19,7 +19,17 @@
     margin-bottom: 5px;
   }
 }
-
+.knockout-line-right {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px;
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 .knockout-score {
   color: $orange;
 }
@@ -58,4 +68,20 @@
   flex: 1 0 auto;
   background-color: $orange;
   color: $purple;
+}
+.knockout-team {
+  flex: 0 0 60%;
+}
+
+.knockout-badge {
+  flex: 0 0 10%;
+  img {
+    width: 35px;
+  }
+}
+.knockout-score {
+  flex: 0 0 10%;
+}
+.knockout-result-button {
+  flex: 0 0 10%;
 }

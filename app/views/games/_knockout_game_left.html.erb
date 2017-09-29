@@ -3,6 +3,9 @@
     <div class="knockout-team">
       <p><%= game.entry_home.name %></p>
     </div>
+    <div class="knockout-badge">
+      <%= image_tag "#{game.entry_home.team.badge}" %>
+    </div>
     <% unless game.entry_home_score.nil? %>
       <div class="knockout-score">
         <p><%= game.entry_home_score %></p>
@@ -13,8 +16,11 @@
     <div class="knockout-team">
       <p><%= game.entry_away.name %></p>
     </div>
+    <div class="knockout-badge">
+      <%= image_tag "#{game.entry_away.team.badge}" %>
+    </div>
     <% if game.entry_home_score.nil? %>
-      <div class="result-button"><p class="btn xi-start-button" data-toggle="modal" data-target="#modal-<%= game.id %>"><i class="fa fa-futbol-o" aria-hidden="true"></i></p></div>
+      <div class="knockout-result-button"><p class="btn xi-start-button" data-toggle="modal" data-target="#modal-<%= game.id %>"><i class="fa fa-futbol-o" aria-hidden="true"></i></p></div>
     <% else %>
       <div class="knockout-score">
         <p><%= game.entry_away_score %></p>
