@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :groups, only: [:index]
     resources :entries, only: [:create]
     resources :games, only: [:update]
-    post "/start_knockout_round", to: "tournaments#start_knockout_round"
+    get "/start_knockout_round", to: "tournaments#start_knockout_round"
   end
 end

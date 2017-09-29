@@ -5,7 +5,7 @@
     </div>
     <% if @quarter_one.nil? %>
       <div class="banner-button">
-        <%= link_to tournament_start_knockout_round_path(@tournament, id: @tournament.id), method: :post do  %>
+        <%= link_to tournament_start_knockout_round_path(@tournament, id: @tournament.id) do %>
           <h4 class="knockout-button">Knockout Rnd</h4>
         <% end %>
       </div>
