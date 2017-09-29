@@ -1,9 +1,18 @@
 <div class="container">
   <div class="row">
     <% @tournaments.each do |tournament| %>
-      <%= link_to tournament_path(tournament) do %>
-        <p><%= tournament.name %></p>
-      <% end %>
+      <div class="tournament-banner" style="margin-top:20px">
+        <%= link_to tournament_path(tournament) do %>
+          <div>
+            <h4><%= tournament.name %></h4>
+          </div>
+        <% end %>
+        <%= link_to tournament_path(tournament), data: { confirm: "Are you sure?" }, method: :delete do %>
+          <div>
+            <p><i class="fa fa-trash-o" aria-hidden="true"></i></p>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

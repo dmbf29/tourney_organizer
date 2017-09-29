@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  before_action :set_tournament, only: [:edit, :update, :show, :start_knockout_round]
+  before_action :set_tournament, only: [:edit, :update, :show, :start_knockout_round, :destroy]
   before_action :set_groups_and_standings, only: [:show, :start_knockout_round]
 
   def index
@@ -30,6 +30,11 @@ class TournamentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @tournament.destroy
+    redirect_to tournaments_path
   end
 
   def show
