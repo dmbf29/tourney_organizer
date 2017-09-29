@@ -49,11 +49,23 @@
 }
 .game-home-team {
   font-size: 14px;
-  flex: 0 0 35%
+  flex: 0 0 30%;
 }
 .game-away-team {
   font-size: 14px;
-  flex: 0 0 35%
+  flex: 0 0 30%;
+}
+.game-home-badge {
+  flex: 0 0 10%;
+  img {
+    width: 40px;
+  }
+}
+.game-away-badge {
+  flex: 0 0 10%;
+  img {
+    width: 40px;
+  }
 }
 
 .standings-line {

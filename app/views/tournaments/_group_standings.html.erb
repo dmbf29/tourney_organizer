@@ -8,6 +8,9 @@
             <div class="game-home-team">
               <p><%= game.entry_home.name %></p>
             </div>
+            <div class="game-home-badge">
+              <%= image_tag "#{game.entry_home.team.badge}" %>
+            </div>
             <% if game.entry_home_score.nil? %>
               <div class="result-button"><p class="btn xi-start-button" data-toggle="modal" data-target="#modal-<%= game.id %>"><i class="fa fa-futbol-o" aria-hidden="true"></i></p></div>
             <% else %>
@@ -18,6 +21,9 @@
                 <p><%= game.entry_away_score %></p>
               </div>
             <% end %>
+            <div class="game-away-badge">
+              <%= image_tag "#{game.entry_away.team.badge}" %>
+            </div>
             <div class="game-away-team">
               <p><%= game.entry_away.name %></p>
             </div>
