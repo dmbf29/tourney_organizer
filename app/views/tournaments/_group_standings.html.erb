@@ -2,6 +2,19 @@
       <div class="group-header">
         <h4>Group <%= group.name %></h4>
       </div>
+      <div class="group-subheader">
+        <div class="game-home-team">
+          <p>Home</p>
+        </div>
+        <div class="game-home-badge"></div>
+        <div class="game-home-score"></div>
+        <div><p style="font-size:14px">Score</p></div>
+        <div class="game-away-score"></div>
+        <div class="game-away-badge"></div>
+        <div class="game-away-team">
+          <p>Away</p>
+        </div>
+      </div>
       <div class="tournament-wrapper">
         <% group.games.each do |game| %>
           <div class="game-line">
@@ -66,27 +79,27 @@
       <div class="standings-header">
         <h4>Standings</h4>
       </div>
-      <div class="tournament-wrapper">
-        <div class="standings-line" style="font-weight:bolder">
-          <div class="standings-team">
-            <p>Team</p>
-          </div>
-          <div class="standings-wins">
-            <p>W</p>
-          </div>
-          <div class="standings-draws">
-            <p>D</p>
-          </div>
-          <div class="standings-losses">
-            <p>L</p>
-          </div>
-          <div class="standings-difference">
-            <p>GD</p>
-          </div>
-          <div class="standings-points">
-            <p>Pts</p>
-          </div>
+      <div class="standings-subheader">
+        <div class="standings-team">
+          <p>Team</p>
         </div>
+        <div class="standings-wins">
+          <p>W</p>
+        </div>
+        <div class="standings-draws">
+          <p>D</p>
+        </div>
+        <div class="standings-losses">
+          <p>L</p>
+        </div>
+        <div class="standings-difference">
+          <p>GD</p>
+        </div>
+        <div class="standings-points">
+          <p>Pts</p>
+        </div>
+      </div>
+      <div class="tournament-wrapper">
         <% standings.entries.each do |entry| %>
           <div class="standings-line <%= 'second-line' if entry == standings[1] %> <%= 'third-line' if entry == standings[2] %>">
             <div class="standings-team">
