@@ -41,7 +41,7 @@
         <% if @final_one.nil?  %>
           <h4>Final</h4>
         <% else %>
-          <%= render partial: "games/knockout_game_left", locals: {
+          <%= render partial: "games/knockout_game_final", locals: {
           game: @final_one } %>
         <% end %>
       </div>

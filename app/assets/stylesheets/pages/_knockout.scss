@@ -19,6 +19,17 @@
     margin-bottom: 5px;
   }
 }
+.knockout-line-score {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 .knockout-line-right {
   font-size: 14px;
   display: flex;
@@ -32,6 +43,14 @@
 }
 .knockout-score {
   color: $orange;
+}
+.knockout-final-score {
+  color: $orange;
+  text-align: center;
+  background-color: $purple;
+  border-radius: 2px;
+  padding: 5px;
+  width: 60px;
 }
 .knockout-header {
   flex: 1 0 auto;

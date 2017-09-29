@@ -48,11 +48,12 @@ class TournamentsController < ApplicationController
   end
 
   def start_knockout_round
-    # Make unless games finished
+    unless Game.where(tournament: @tournament, winner: nil).empty?
       Game.create(tournament: @tournament, entry_home: @standings_a[0], entry_away: @standings_b[1], round: 1, knockout_name: 0)
       Game.create(tournament: @tournament, entry_home: @standings_b[0], entry_away: @standings_c[1], round: 1, knockout_name: 1)
       Game.create(tournament: @tournament, entry_home: @standings_c[0], entry_away: @standings_a[1], round: 1, knockout_name: 2)
       Game.create(tournament: @tournament, entry_home: third_place_teams[0], entry_away: third_place_teams[1], round: 1, knockout_name: 3)
+    end
     redirect_to tournament_path(@tournament)
   end
 
