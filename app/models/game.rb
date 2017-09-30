@@ -38,14 +38,14 @@ class Game < ApplicationRecord
 
   def create_semis(tournament)
     Game.create(tournament: tournament,
-                entry_home: Game.find_by(tournament: tournament, knockout_name: 1).winner,
-                entry_away: Game.find_by(tournament: tournament, knockout_name: 2).winner,
+                entry_home: Game.find_by(tournament: tournament, knockout_name: "quarter_one").winner,
+                entry_away: Game.find_by(tournament: tournament, knockout_name: "quarter_two").winner,
                 round: 2,
                 knockout_name: 4
                 )
     Game.create(tournament: tournament,
-                entry_home: Game.find_by(tournament: tournament, knockout_name: 1).winner,
-                entry_away: Game.find_by(tournament: tournament, knockout_name: 2).winner,
+                entry_home: Game.find_by(tournament: tournament, knockout_name: "quarter_three").winner,
+                entry_away: Game.find_by(tournament: tournament, knockout_name: "quarter_four").winner,
                 round: 2,
                 knockout_name: 5
                 )
@@ -53,8 +53,8 @@ class Game < ApplicationRecord
 
   def create_final(tournament)
     Game.create(tournament: tournament,
-                entry_home: Game.find_by(tournament: tournament, knockout_name: 4).winner,
-                entry_away: Game.find_by(tournament: tournament, knockout_name: 5).winner,
+                entry_home: Game.find_by(tournament: tournament, knockout_name: "semi_one").winner,
+                entry_away: Game.find_by(tournament: tournament, knockout_name: "semi_two").winner,
                 round: 2,
                 knockout_name: 6
                 )
