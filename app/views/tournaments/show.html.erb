@@ -13,19 +13,17 @@
       <div class="banner-button"></div>
     <% end %>
   </div>
-  <% unless @quarter_one.nil? %>
-    <div class="row">
-      <%= render partial: "knockout", locals: {
-        quarter_one: @quarter_one,
-        quarter_two: @quarter_two,
-        quarter_three: @quarter_three,
-        quarter_four: @quarter_four,
-        semi_one: @semi_one,
-        semi_two: @semi_two,
-        final_one: @final_one
-      } %>
-    </div>
-  <% end %>
+  <div class="row">
+    <%= render partial: "knockout", locals: {
+      quarter_one: @quarter_one,
+      quarter_two: @quarter_two,
+      quarter_three: @quarter_three,
+      quarter_four: @quarter_four,
+      semi_one: @semi_one,
+      semi_two: @semi_two,
+      final_one: @final_one
+    } %>
+  </div>
   <div class="row">
     <%= render partial: "group_standings", locals: { group: @group_a, standings: @standings_a } %>
   </div>
