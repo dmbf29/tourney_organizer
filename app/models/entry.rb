@@ -22,7 +22,7 @@ class Entry < ApplicationRecord
   end
 
   def points
-    pts = wins.length * 3
+    pts = wins.where(round: 0).length * 3
     pts += draws
     pts
   end
