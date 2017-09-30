@@ -55,8 +55,8 @@
       </div>
       <div class="knockout-stage">
         <% if @quarter_three.nil?  %>
-          <h4>A1 / B2</h4><br />
-          <h4>B2 / C2</h4>
+          <h4>C1 / A2</h4><br />
+          <h4>3(1) / 3(2)</h4>
         <% else %>
           <%= render partial: "games/knockout_game_right", locals: {
             game: @quarter_three } %>
