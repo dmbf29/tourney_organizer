@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="tournament-wrapper">
-        <% group.games.each do |game| %>
+        <% group.games.order("id ASC").each do |game| %>
           <div class="game-line">
             <div class="game-home-team">
               <p><%= game.entry_home.name %></p>
