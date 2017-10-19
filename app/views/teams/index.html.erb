@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="teams-header">
+      <h1>Teams</h1>
+    </div>
+    <div class="teams-subheader">
+      <div class="team-badge">
+        <p>Badge</p>
+      </div>
+      <div class="team-name">
+        <p>Team</p>
+      </div>
+      <div class="team-rating">
+        <p>Rating</p>
+      </div>
+    </div>
+    <div class="teams-wrapper">
+      <div class="teams-wrapper-content">
+        <% @teams.order("rating DESC").each do |team| %>
+          <div class="team-line">
+            <div class="team-badge">
+              <%= image_tag team.badge %>
+            </div>
+            <div class="team-name">
+              <p><%= team.name %></p>
+            </div>
+            <div class="team-rating">
+              <p><%= team.rating %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
