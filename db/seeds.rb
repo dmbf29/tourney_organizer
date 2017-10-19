@@ -258,8 +258,8 @@ rating: 4
 ).first_or_create
 
 Team.where(
-name: "Fenerbahce",
-badge: "fenerbahce.png",
+name: "Fenerbache",
+badge: "fenerbahche.png",
 rating: 4
 ).first_or_create
 

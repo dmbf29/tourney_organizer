@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :games, only: [:update]
     get "/start_knockout_round", to: "tournaments#start_knockout_round"
   end
+  resources :teams, only: [:index]
 end
